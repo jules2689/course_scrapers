@@ -5,6 +5,7 @@ require 'mechanize'
 
 class Einstein::MitOpenCourseWare
   URL = "http://ocw.mit.edu"
+  PROVIDER = "MIT"
 
   def self.fetch
     course_listings = fetch_course_listings
