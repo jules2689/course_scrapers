@@ -1,4 +1,5 @@
 require 'mechanize'
+require_relative 'helpers/message_logger'
 
 # TODO: Use Last Modified and ETags to determine necessity to update
 # TODO: ActiveRecord integration
@@ -10,9 +11,9 @@ class Einstein::MitOpenCourseWare
   def self.fetch
     course_listings = fetch_course_listings
     course_listings.each_with_index do |(department, courses), idx|
-      puts "\n(#{idx + 1} of #{course_listings.size}) Fetching #{courses.size} courses for #{department} at #{DateTime.now}..."
+      MessageLogger.log "\n(#{idx + 1} of #{course_listings.size}) Fetching #{courses.size} courses for #{department} at #{DateTime.now}..."
       course_listings[department] = courses.collect.with_index do |course, index| 
-        print "\r#{percent(index + 1, courses.size)}%"
+        MessageLogger.print "\r#{percent(index + 1, courses.size)}%"
         fetch_course_listing(course)
       end
     end
