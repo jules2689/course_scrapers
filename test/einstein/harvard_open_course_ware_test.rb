@@ -1,7 +1,6 @@
 require 'test_helper'
 require 'json'
 require 'net/http'
-require 'pry'
 
 class Einstein::HarvardOpenCourseWareTest < Minitest::Test
 

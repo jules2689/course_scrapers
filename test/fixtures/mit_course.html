@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <title>Astrodynamics | Aeronautics and Astronautics | MIT
+    OpenCourseWare</title><!-- Begin Automatic Metadata Insertion -->
+    <meta content="16-346-astrodynamics-fall-2008" name="WT.cg_n">
+    <meta content="Course Home" name="WT.cg_s">
+    <meta content=
+    "This course covers the fundamentals of astrodynamics, focusing on the two-body orbital initial-value and boundary-value problems with applications to space vehicle navigation and guidance for lunar and planetary missions, including both powered flight and midcourse maneuvers. Other topics include celestial mechanics, Kepler's problem, Lambert's problem, orbit determination, multi-body methods, mission planning, and recursive algorithms for space navigation. Selected applications from the Apollo, Space Shuttle, and Mars exploration programs are also discussed."
+    name="Description">
+    <meta content="Battin, Richard" name="Author">
+    <meta content=
+    "space navigation,two body problem,boundary value problem,Kepler,astrodynamics,orbital transfer,satellite,hyperbolic orbits,planetary flybys,hypergeometric functions,flight guidance,three body problem,Clohessy-Wiltshire equation,Hodograph plane,Battin-vaughan formulation,atmospheric drag,disturbing function,Astrodynamics,Guidance and Control Systems"
+    name="keywords">
+    <meta content="16.346 Astrodynamics | Aeronautics and Astronautics" name=
+    "Search_Display">
+    <meta content="Astrodynamics">
+    <meta content="Guidance and Control Systems">
+    <meta content="Astrodynamics">
+    <meta content=
+    "http://ocw.mit.edu/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/">
+    <meta content=
+    "http://ocw.mit.edu/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/16-346f08.jpg">
+    <meta content=
+    "This course covers the fundamentals of astrodynamics, focusing on the two-body orbital initial-value and boundary-value problems with applications to space vehicle navigation and guidance for lunar and planetary missions, including both powered flight and midcourse maneuvers. Other topics include celestial mechanics, Kepler's problem, Lambert's problem, orbit determination, multi-body methods, mission planning, and recursive algorithms for space navigation. Selected applications from the Apollo, Space Shuttle, and Mars exploration programs are also discussed.">
+    <meta content="website">
+    <meta content="MIT OpenCourseWare">
+    <meta content="198929696826608"><!-- End Automatic Metadata Insertion -->
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+    <div id="top">
+        <div id="grid">
+            <div class=
+            "portletWrapper kssattr-portlethash-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572"
+            id=
+            "portletwrapper-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572">
+            <div class="portletStaticText portlet-static-site-header">
+                    <!--googleoff: index-->
+                    <div class="grid_6 alpha" id="banner" role="banner">
+                        <a href="/"><img alt=
+                        "MIT OpenCourseWare, Massachusetts Institute of Technology"
+                        class="logo" src="/images/ocw_mast.png"></a>
+                    </div>
+                    <div class="grid_6 omega" id="subscribe" role=
+                    "form toolbar">
+                        <div class="module">
+                            <table class="social">
+                                <tbody>
+                                    <tr>
+                                        <td class="socialbutton">
+                                            <a href=
+                                            "/subscribe/index.htm?utm_source=header">
+                                            <img alt=
+                                            "An icon depicting an envelope."
+                                            src="/images/trans.gif">Subscribe
+                                            to the OCW Newsletter</a>
+                                        </td>
+                                        <td>
+                                            <a href=
+                                            "https://plus.google.com/104567381989352550847/posts">
+                                            <img alt=
+                                            "Click to visit our Google+ page."
+                                            src=
+                                            "/images/icon_gp.png"></a><a href=
+                                            "https://www.pinterest.com/mitocw/pins/"><img alt="Click to visit our Pinterest page."
+                                            src=
+                                            "/images/icon_pin.png"></a><a href=
+                                            "http://facebook.com/mitocw"><img alt="Click to visit our Facebook page."
+                                            src=
+                                            "/images/icon_fb.png"></a><a href=
+                                            "http://twitter.com/mitocw"><img alt="Click to visit our Twitter feed."
+                                            src="/images/icon_tw.png"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="helplinks"><a href=
+                        "/help">Help</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/jsp/feedback.jsp?Referer=">Contact
+                        Us</a></p>
+                    </div>
+                    <div class="clear">
+                        &nbsp;
+                    </div><!--googleon: index-->
+                </div>
+            </div><!--googleoff: index-->
+            <div class="grid_8 alpha" id="mega" role="navigation">
+                <ul id="menu">
+                    <li id="menu_home">
+                        <a href="/"><img alt="Click for site home page." class=
+                        "home_icon" src="/images/top-nav_home.png"></a>
+                        <!-- Begin Home Item -->
+                    </li><!-- End Home Item -->
+                    <li class="selected">
+                        <a class="drop" href="#">Courses</a>
+                        <!-- Begin 5 columns Item -->
+                        <div class="dropdown_5columns-a mega-courses">
+                            <div class="col_1a">
+                                <div class="row_1a">
+                                    <div class="quart">
+                                        <h2 class="nav">Find courses by:</h2>
+                                        <ul class="nav-bullet find_by">
+                                            <li>
+                                                <a href=
+                                                "/courses/find-by-topic/">Topic</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/find-by-number/">MIT
+                                                Course Number</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/find-by-department/">Department</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="quart">
+                                        <h2 class="nav">Collections</h2>
+                                        <ul class="nav-bullet">
+                                            <li>
+                                                <a href=
+                                                "/courses/audio-video-courses/">
+                                                Audio/Video Lectures</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/online-textbooks/">Online
+                                                Textbooks</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/new-courses/">New
+                                                Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/most-visited-courses/">
+                                                Most Visited Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/ocw-scholar/">OCW
+                                                Scholar Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/this-course-at-mit/">This
+                                                Course at MIT</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/resources/">Supplemental
+                                                Resources</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div class="row_1b">
+                                    <h2 class="nav">Cross-Disciplinary Topic
+                                    Lists</h2>
+                                    <div class="quart">
+                                        <ul class="nav-bullet">
+                                            <li>
+                                                <a href=
+                                                "/courses/energy-courses">Energy</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/entrepreneurship">Entrepreneurship</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/environment-courses">Environment</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="quart">
+                                        <ul class="nav-bullet">
+                                            <li>
+                                                <a href=
+                                                "/courses/intro-programming">Introductory
+                                                Programming</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/life-sciences">Life
+                                                Sciences</a>
+                                            </li>
+                                            <li>
+                                                <a href=
+                                                "/courses/transportation-courses">
+                                                Transportation</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div class="clear">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="col_1b">
+                                <h2 class="nav">Translated Courses</h2>
+                                <ul class="nav-bullet">
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/traditional-chinese">
+                                        繁體字 / Traditional Chinese</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/spanish">Español
+                                        / Spanish</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/portuguese">
+                                        Português / Portuguese</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/persian">فارسی
+                                        / Persian</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/turkish">Türkçe
+                                        / Turkish</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses/korean">(비디오)한국
+                                        / Korean</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/courses/translated-courses">More...</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="drop" href="">About</a>
+                        <div class="dropdown_1column-a">
+                            <div class="col_1">
+                                <ul class="nav-bullet mega-div-bottom">
+                                    <li>
+                                        <a href="/about/">About MIT
+                                        OpenCourseWare</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav-bullet mega-div-bottom">
+                                    <li>
+                                        <a href="/about/site-statistics/">Site
+                                        Stats</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/ocw-stories/">OCW
+                                        Stories</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav-bullet">
+                                    <li>
+                                        <a href="/about/media-coverage/">Media
+                                        Coverage</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/about/newsletter/">Newsletter</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="drop" href="">Donate</a>
+                        <div class="dropdown_1column-a">
+                            <div class="col_1">
+                                <ul class="nav-bullet mega-div-bottom">
+                                    <li>
+                                        <a href="/donate/">Make a Donation</a>
+                                    </li>
+                                    <li>
+                                        <a href="/donate/why-donate/">Why
+                                        Donate?</a>
+                                    </li>
+                                    <li>
+                                        <a href="/donate/our-supporters/">Our
+                                        Supporters</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/donate/other-ways-to-contribute/">Other
+                                        Ways to Contribute</a>
+                                    </li>
+                                    <li>
+                                        <a href="/donate/shop-ocw">Shop OCW</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav-bullet">
+                                    <li>
+                                        <a href="/support/">Become a Corporate
+                                        Sponsor</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="drop" href="">Featured Sites</a>
+                        <div class="dropdown_1column-a">
+                            <div class="col_1">
+                                <ul class="nav-bullet mega-div-bottom">
+                                    <li>
+                                        <a href="/high-school/">Highlights for
+                                        High School</a>
+                                    </li>
+                                    <li>
+                                        <a href="/educator/">OCW Educator</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav-bullet mega-div-top">
+                                    <li>
+                                        <a href=
+                                        "http://ocw.mit.edu/ans7870/featured/mitx-courses-on-edx.htm">
+                                        MITx Courses on edX</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "http://teachingexcellence.mit.edu/">Teaching
+                                        Excellence at MIT</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "http://www.oeconsortium.org/">Open
+                                        Education Consortium</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid_4 omega" id="search" role="search">
+                <form action="http://search.mit.edu/search" method="get">
+                    <input name="site" type="hidden" value="ocw"> <input name=
+                    "client" type="hidden" value="mit"> <input name="getfields"
+                    type="hidden" value="*"> <input name="output" type="hidden"
+                    value="xml_no_dtd"> <input name="proxystylesheet" type=
+                    "hidden" value="http://ocw.mit.edu/search/google-ocw.xsl">
+                    <input name="requiredfields" type="hidden" value=
+                    "WT%2Ecg_s:Course Home|WT%2Ecg_s:Resource Home">
+                    <input name="sectionlimit" type="hidden" value=
+                    "WT%2Ecg_s:Course Home|WT%2Ecg_s:Resource Home">
+                    <input name="as_dt" type="hidden" value="i"> <input name=
+                    "oe" type="hidden" value="utf-8"> <input name=
+                    "departmentName" type="hidden" value="web"> <input name=
+                    "filter" type="hidden" value="0"> <input name="courseName"
+                    type="hidden">
+                    <table class="search">
+                        <tbody>
+                            <tr>
+                                <td class="black"><input class=
+                                "greytext searchField" id="terms" maxlength=
+                                "255" name="q" onblur="fillSearchBox()"
+                                onfocus="clearSearchBox()" type="text" value=
+                                "Search"></td>
+                                <td class="black"><input class="sub_button"
+                                name="btnG" src="/images/button_search.png"
+                                type="image"></td>
+                                <td class="text2">
+                                    <a href=
+                                    "/search/AdvancedSearch.htm">Advanced<br>
+                                    Search</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="clear"></div><!--googleon: index-->
+            <!-- *end header* -->
+        </div><!-- top grid end -->
+    </div><!-- top end -->
+    <div id="center_chp">
+        <div id="grid">
+            <div id="left">
+                <div id="breadcrumb_chp">
+                    <p><a href="/">Home</a> » <a href="/courses">Courses</a> »
+                    <a href="/courses/aeronautics-and-astronautics">Aeronautics
+                    and Astronautics</a> » Astrodynamics</p>
+                </div>
+                <div class="clear"></div>
+                <div id="course_title">
+                    <h1 class="title" itemprop="name">Astrodynamics</h1>
+                </div>
+                <div class="clear"></div>
+                <div id="course_wrapper">
+                    <div id="course_nav">
+                        <script language="javascript" type="text/javascript">
+                        function toggleMenu(objID) {
+                        if (!document.getElementById) return;
+                        var ob = document.getElementById(objID);
+                        ob.className = (ob.className == 'selected')?'': 'selected';
+                        }
+                        function toggleClass(id)
+                        {
+                        var divtoggleClass= document.getElementById(id);
+                        divtoggleClass.className = (divtoggleClass.className == 'mO')?'mC': 'mO';
+                        return false;
+                        }
+                        function changeAlt(id)
+                        {
+                        id.alt = (id.alt == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+                        id.title = (id.title == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+                        }
+                        </script> <!--Left Nav Starts -->
+                        <ul>
+                            <li class="selected">
+                                <a href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/index.htm">
+                                Course Home</a>
+                            </li>
+                            <li class="">
+                                <a href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/syllabus">
+                                Syllabus</a>
+                            </li>
+                            <li class="">
+                                <a href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/lecture-notes">
+                                Lecture Notes</a>
+                            </li>
+                            <li class="">
+                                <a href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/assignments">
+                                Assignments</a>
+                            </li>
+                            <li class="">
+                                <a href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/video-lecture">
+                                Video Lecture</a>
+                            </li><!--second tal block close-->
+                            <li class="">
+                                <a class="" href=
+                                "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/download-course-materials">
+                                Download Course Materials</a>
+                            </li>
+                        </ul><!--Left Nav Ends -->
+                    </div>
+                    <div id="course_inner_chp">
+                        <div id="chpImage">
+                            <div class="image"><img alt=
+                            "Diagram of a Venus and Mars double-reconnaissance trajectory."
+                            border="0" itemprop="image" src=
+                            "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/16-346f08.jpg"
+                            title=
+                            "Diagram of a Venus and Mars double-reconnaissance trajectory."></div>
+                            <div class="caption">
+                                <div class="" id=
+                                "parent-fieldname-image_caption_text">
+                                    <p>The first realistic multiple flyby
+                                    orbit,&nbsp;discovered January 26, 1961
+                                    using trial and error.&nbsp; (Image
+                                    courtesy of Richard Battin.)</p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="course_info">
+                            <h3 class="divide">Instructor(s)</h3>
+                            <p class="ins" itemprop="author">Prof. Richard
+                            Battin</p>
+                            <h3 class="divide">MIT Course Number</h3>
+                            <p>16.346</p>
+                            <h3>As Taught In</h3>
+                            <p itemprop="startDate">Fall 2008</p>
+                            <h3 class="divide">Level</h3>
+                            <p itemprop="typicalAgeRange">Graduate</p>
+                            <p class="cite" id="showCitation"><a href="#">Cite
+                            This Course</a></p>
+                        </div><!--Course_info tag close -->
+                        <div class="clear"></div>
+                        <div class="coursePreview" id="coursePreview" style=
+                        "display: none; width: 468px;">
+                            <div id="courseInfoInner">
+                                <a class="close" href="#"><img alt="Close"
+                                class="btn_close" src="/images/close.png"
+                                title="Close Window"></a>
+                                <div class="coursePreviewTop">
+                                    <h3 id="courseTitle">Ocean Wave Interaction
+                                    with Ships and Offshore Energy Systems
+                                    (13.022)</h3>
+                                </div>
+                                <div class="coursePreviewBottom">
+                                    <div class="images">
+                                        <img alt=
+                                        "Course image thumbnail alt-text goes here."
+                                        class="first" id="courseThumb" src=
+                                        ""><br>
+                                        <a href="" id="viewCourse"><img alt=
+                                        "Click here to view this course." src=
+                                        "/images/button_view-course.png"></a>
+                                    </div>
+                                    <div class="info">
+                                        <table class="coursePreviewTable">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <p class="intro" id=
+                                                        "courseDesc">Some
+                                                        Description</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="instructor">
+                                                    <td class="first">
+                                                        <p>
+                                                        <strong>Instructor(s)</strong></p>
+                                                    </td>
+                                                    <td>
+                                                        <p id=
+                                                        "courseInstructors">
+                                                        Prof.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first">
+                                                        <p><strong>As Taught
+                                                        In</strong></p>
+                                                    </td>
+                                                    <td>
+                                                        <p id="courseSem">
+                                                        Spring 2002</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p><strong>Course
+                                                        Number</strong></p>
+                                                    </td>
+                                                    <td>
+                                                        <p id="courseNo">
+                                                        2.24</p>
+                                                    </td>
+                                                </tr>
+                                                <tr id="level">
+                                                    <td>
+                                                        <p>
+                                                        <strong>Level</strong></p>
+                                                    </td>
+                                                    <td>
+                                                        <p id="courseLevel">
+                                                        Undergraduate/Graduate</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="last">
+                                                    <td>
+                                                        <p>
+                                                        <strong>Features</strong></p>
+                                                    </td>
+                                                    <td>
+                                                        <p id="courseFeatures">
+                                                        Lecture Notes, Student
+                                                        Work</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help slide-bottom" style="display: block;">
+                            <div class="help-message">
+                                <a class="help-engage" href=
+                                "javascript:%20trackEvents('Bottom%20Get%20Started','bottom%20get%20started%20Click','Help%20Overlay');">
+                                Need help getting started?</a> <a class=
+                                "help-dismiss" href=
+                                "javascript:disableHelpPopup();%20trackEvents('Bottom%20Don\'t%20Show','bottom%20don\'t%20show%20Click','Help%20Overlay');">
+                                Don't show me this again</a>
+                            </div><!--help-message-->
+                        </div><!--help slide-bottom-->
+                        <div class="help popup-center">
+                            <div class="help-message">
+                                <p class="help-dismiss"><a href=
+                                "javascript:disableHelpPopup();%20trackEvents('Popup%20Don\'t%20Show','popup%20don\'t%20show%20Click','Help%20Overlay');">
+                                Don't show me this again</a></p>
+                                <h2>Welcome!</h2>
+                                <p>This is one of over 2,200 courses on OCW.
+                                Find materials for this course in the pages
+                                linked along the left.</p>
+                                <p><strong>MIT OpenCourseWare</strong> is a
+                                free &amp; open publication of material from
+                                thousands of MIT courses, covering the entire
+                                MIT curriculum.</p>
+                                <p><strong>No enrollment or
+                                registration.</strong> Freely browse and use
+                                OCW materials at your own pace. There's no
+                                signup, and no start or end dates.</p>
+                                <p><strong>Knowledge is your reward.</strong>
+                                Use OCW to guide your own life-long learning,
+                                or to teach others. We don't offer credit or
+                                certification for using OCW.</p>
+                                <p><strong>Made for sharing</strong>. Download
+                                files for later. Send to friends and
+                                colleagues. Modify, remix, and reuse (just
+                                remember to cite OCW as the source.)</p>
+                                <p class="help-engage">Learn more at <a href=
+                                "http://ocw.mit.edu/help/get-started-with-ocw/"
+                                onclick=
+                                "trackEvents('Popup Get Started','popup get started Click','Help Overlay');">
+                                Get Started with MIT OpenCourseWare</a></p>
+                            </div><!-- help-message -->
+                        </div><!--help popup-center-->
+                        <div id="course_tabs">
+                            <ul id="tabs">
+                                <li class="first">
+                                    <a class="selected" href=
+                                    "#description">Course Description</a>
+                                </li>
+                                <li class="last">
+                                    <a class="" href="#related">Related<br>
+                                    Content</a>
+                                </li>
+                            </ul>
+                            <div class="tabContent" id="description" itemprop=
+                            "description">
+                                <div>
+                                    <h2 class="subhead">Course Features</h2>
+                                    <ul class="specialfeatures">
+                                        <li>
+                                            <a href=
+                                            "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/video-lecture">
+                                            Selected video lectures</a>
+                                        </li>
+                                        <li>
+                                            <a href=
+                                            "/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008/video-lecture">
+                                            Subtitles/transcript</a>
+                                        </li>
+                                    </ul>
+                                    <h2 class="subhead">Course Description</h2>
+                                    <p>This course covers the fundamentals of
+                                    astrodynamics, focusing on the two-body
+                                    orbital initial-value and boundary-value
+                                    problems with applications to space vehicle
+                                    navigation and guidance for lunar and
+                                    planetary missions, including both powered
+                                    flight and midcourse maneuvers. Other
+                                    topics include celestial mechanics,
+                                    Kepler's problem, Lambert's problem, orbit
+                                    determination, multi-body methods, mission
+                                    planning, and recursive algorithms for
+                                    space navigation. Selected applications
+                                    from the Apollo, Space Shuttle, and Mars
+                                    exploration programs are also
+                                    discussed.</p>
+                                </div>
+                            </div>
+                            <div class="tabContent hide" id="related">
+                                <div>
+                                    <h2 class="subhead">Course Collections</h2>
+                                    <p>See related courses in the following
+                                    collections:</p>
+                                    <h3 class="subsubhead">Find Courses by
+                                    Topic</h3>
+                                    <ul>
+                                        <li>
+                                            <a href=
+                                            "/courses/find-by-topic/#cat=engineering&amp;subcat=aerospaceengineering&amp;spec=astrodynamics">
+                                            Aerospace Engineering &gt;
+                                            Astrodynamics</a>
+                                        </li>
+                                        <li>
+                                            <a href=
+                                            "/courses/find-by-topic/#cat=engineering&amp;subcat=aerospaceengineering&amp;spec=guidanceandcontrolsystems">
+                                            Aerospace Engineering &gt; Guidance
+                                            and Control Systems</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                        var MCN = "16.346"
+                        </script> 
+                        <script src="/scripts/edxcourselinking.js" type=
+                        "text/javascript">
+                        </script>
+                    </div><!--Course_inner_chip tag close -->
+                </div><!--Course_wrapper tag close -->
+            </div><!--left tag close -->
+            <div class="clear"></div>
+        </div><!--grid tag close -->
+        <div class="citeHome" id="cite_popup_box">
+            <div class="citeInner">
+                <p>Richard Battin. <em>16.346 Astrodynamics, Fall 2008</em>.
+                (Massachusetts Institute of Technology: MIT OpenCourseWare),
+                <a href=
+                "http://ocw.mit.edu/courses/aeronautics-and-astronautics/16-346-astrodynamics-fall-2008"
+                target="_blank">http://ocw.mit.edu</a> (Accessed 29 Dec, 2015).
+                License: <a href=
+                "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+                Commons BY-NC-SA</a></p><br>
+                <p style="margin-top:30px">For more information about using
+                these materials and the Creative Commons license, see our
+                <a href="/terms" target="_blank">Terms of Use</a>.</p><br>
+            </div><a href="#" id="closeCitation"><img alt="Close" class=
+            "btn_close" src="/images/close.png" title="Close Window"></a>
+        </div>
+    </div>
+</body>
+</html>
