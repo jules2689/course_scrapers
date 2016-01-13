@@ -1,6 +1,6 @@
-require 'einstein/version'
-require 'einstein/mit_open_course_ware'
-require 'einstein/harvard_open_course_ware'
+Dir[File.dirname(__FILE__) + '/einstein/*.rb'].each do |file| 
+  require_relative file
+end
 
 module Einstein
 
