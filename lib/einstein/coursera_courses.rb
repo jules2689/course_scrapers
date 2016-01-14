@@ -17,8 +17,6 @@ class Einstein::CourseraCourses
     courses.flatten
   end
 
-  private
-
   def self.fetch_course_listings(offset = 0)
     MessageLogger.log "Fetching with an offset of #{offset}"
 
