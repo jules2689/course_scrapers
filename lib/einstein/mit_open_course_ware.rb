@@ -30,8 +30,8 @@ class Einstein::MitOpenCourseWare
       course_listings = departments.zip(course_tables)
 
       courses << course_listings.collect do |listing|
-        department = listing.first.text.strip.gsub(/\s+/,' ')
-        listing.last.children.css("tbody tr").collect { |course| extract_course_from_main_listing(course, department) }          
+        department = listing.first.text.strip.gsub(/\s+/, ' ')
+        listing.last.children.css("tbody tr").collect { |course| extract_course_from_main_listing(course, department) }
       end
     end
 
@@ -44,7 +44,7 @@ class Einstein::MitOpenCourseWare
 
     {
       course_code: attrs.first,
-      course_title: attrs[1].gsub(/\s{2,}/,' '),
+      course_title: attrs[1].gsub(/\s{2,}/, ' '),
       level: attrs.last,
       link: URL + link,
       department: department,
@@ -59,7 +59,7 @@ class Einstein::MitOpenCourseWare
       description = page.at('meta[@name="Description"]/@content').value.strip
       image = URL + page.search(".image img").first.attribute("src").value
       syllabus_link = page.search("#course_nav a").reject { |a| a.text.strip.downcase != "syllabus" }.first
-      
+
       course[:description] = description
       course[:image] = image
       course[:syllabus_link] = URL + syllabus_link.attribute("href").value if syllabus_link
@@ -72,5 +72,4 @@ class Einstein::MitOpenCourseWare
   def self.agent
     @agent ||= Mechanize.new { |agent| agent.user_agent_alias = 'Mac Safari' }
   end
-
 end

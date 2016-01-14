@@ -13,13 +13,13 @@ class Einstein::CourseraCourses
       offset = result[:offset]
       courses << result[:courses]
     end
-    
+
     courses.flatten
   end
 
   private
 
-  def self.fetch_course_listings(offset=0)
+  def self.fetch_course_listings(offset = 0)
     MessageLogger.log "Fetching with an offset of #{offset}"
 
     # HTTP request
@@ -63,12 +63,12 @@ class Einstein::CourseraCourses
   end
 
   def self.domains_from_course(course)
-    course["domainTypes"].collect { |domain_type| "#{domain_type["domainId"]}/#{domain_type["subdomainId"]}" }
+    course["domainTypes"].collect { |domain_type| "#{domain_type['domainId']}/#{domain_type['subdomainId']}" }
   end
 
   def self.partners_from_course(course, partners)
-    course["partnerIds"].collect do |partner_id| 
-      partner = partners.select { |p| partner_id == p["id"] }.first
+    course["partnerIds"].collect do |partner_id|
+      partner = partners.find { |p| partner_id == p["id"] }
       partner["name"]
     end
   end
@@ -93,5 +93,4 @@ class Einstein::CourseraCourses
       specializations
     ).join(',')
   end
-
 end

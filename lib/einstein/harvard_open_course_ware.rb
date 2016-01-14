@@ -67,5 +67,4 @@ class Einstein::HarvardOpenCourseWare
       provider: PROVIDER
     }
   end
-
 end
