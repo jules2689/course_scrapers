@@ -1,6 +1,4 @@
 require 'test_helper'
-require 'json'
-require 'net/http'
 
 class Einstein::HarvardOpenCourseWareTest < Minitest::Test
   def test_fetch_gets_all_courses

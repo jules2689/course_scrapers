@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'mechanize'
 
 class Einstein::MitOpenCourseWareTest < Minitest::Test
   def test_fetch_gets_all_courses

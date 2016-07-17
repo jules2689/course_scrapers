@@ -1,6 +1,4 @@
 require 'test_helper'
-require 'net/http'
-require 'pry'
 
 class Einstein::CourseraCoursesTest < Minitest::Test
   def test_fetch_gets_all_courses
