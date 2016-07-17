@@ -1,5 +1,7 @@
 # Einstein
 
+[![CircleCI](https://circleci.com/gh/jules2689/einstein.svg?style=svg)](https://circleci.com/gh/jules2689/einstein)
+
 A collection of web scrapers for online courses. This gem is intended to be able to scrape hundreds of courses into one aggregated spot.
 
 ## Installation
