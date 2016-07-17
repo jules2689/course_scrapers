@@ -1,5 +1,4 @@
 require 'mechanize'
-require_relative 'helpers/message_logger'
 
 # TODO: Use Last Modified and ETags to determine necessity to update
 # TODO: ActiveRecord integration
@@ -12,7 +11,7 @@ class Einstein::MitOpenCourseWare
     course_listings = fetch_course_listings.flatten
     # After fetching all courses, we need to fetch each one individually to get additional information
     course_listings.collect.with_index do |course, idx|
-      MessageLogger.log "\n(#{idx + 1} of #{course_listings.size}) Fetching #{course[:course_title]} at #{DateTime.now}"
+      puts "\n(#{idx + 1} of #{course_listings.size}) Fetching #{course[:course_title]} at #{DateTime.now}"
       fetch_course_listing(course)
     end
   end

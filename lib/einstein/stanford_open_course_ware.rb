@@ -1,5 +1,4 @@
 require 'mechanize'
-require_relative 'helpers/message_logger'
 
 # TODO: Use Last Modified and ETags to determine necessity to update
 # TODO: ActiveRecord integration
@@ -23,7 +22,7 @@ class Einstein::StanfordOpenCourseWare
 
     # Fetch each course page
     courses = courses.collect.with_index do |course, index|
-      MessageLogger.log "Fetching course #{index + 1} of #{courses.size}"
+      puts "Fetching course #{index + 1} of #{courses.size}"
       fetch_course_listing(course)
     end
 

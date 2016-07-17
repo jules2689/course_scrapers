@@ -18,7 +18,7 @@ class Einstein::CourseraCourses
   end
 
   def self.fetch_course_listings(offset = 0)
-    MessageLogger.log "Fetching with an offset of #{offset}"
+    puts "Fetching with an offset of #{offset}"
 
     # HTTP request
     http = Net::HTTP.new(URL, 443)

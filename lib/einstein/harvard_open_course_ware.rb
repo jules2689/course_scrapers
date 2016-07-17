@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'net/http'
 require 'json'
-require_relative 'helpers/message_logger'
+require 'uri'
 
 # TODO: Use Last Modified and ETags to determine necessity to update
 # TODO: ActiveRecord integration
@@ -24,10 +24,11 @@ class Einstein::HarvardOpenCourseWare
   # Main Course Listings
 
   def self.fetch_course_listings(offset)
-    MessageLogger.log "Fetching with an offset of #{offset}"
+    puts "Fetching with an offset of #{offset}"
 
     # Fetch Results
-    response = Net::HTTP.get(BASE_URL, "/ajax/more_courses?offset=#{offset}")
+    url = "#{BASE_URL}/ajax/more_courses?offset=#{offset}"
+    response = Net::HTTP.get(URI(url))
     json = JSON.parse(response)
     courses = []
     new_offset = json["offset"]

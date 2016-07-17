@@ -3,7 +3,14 @@ require 'einstein'
 
 require 'minitest/autorun'
 require 'minitest/unit'
-require 'mocha/mini_test'
 require 'webmock/minitest'
+require 'vcr'
 
-ENV["ruby_env"] = "test"
+class Minitest::Test
+  def setup
+    VCR.configure do |config|
+      config.cassette_library_dir = "test/fixtures/vcr_cassettes"
+      config.hook_into :webmock
+    end
+  end
+end
