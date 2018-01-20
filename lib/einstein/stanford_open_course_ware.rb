@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mechanize'
 
 # TODO: Use Last Modified and ETags to determine necessity to update

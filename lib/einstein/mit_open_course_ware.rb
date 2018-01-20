@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mechanize'
 
 # TODO: Use Last Modified and ETags to determine necessity to update
@@ -11,7 +13,7 @@ class Einstein::MitOpenCourseWare
     course_listings = fetch_course_listings.flatten
     # After fetching all courses, we need to fetch each one individually to get additional information
     course_listings.collect.with_index do |course, idx|
-      puts "\n(#{idx + 1} of #{course_listings.size}) Fetching #{course[:course_title]} at #{DateTime.now}"
+      puts "\n(#{idx + 1} of #{course_listings.size}) Fetching #{course[:course_title]} at #{Time.now.utc}"
       fetch_course_listing(course)
     end
   end
@@ -57,7 +59,7 @@ class Einstein::MitOpenCourseWare
     agent.get(course[:link]) do |page|
       description = page.at('meta[@name="Description"]/@content').value.strip
       image = URL + page.search(".image img").first.attribute("src").value
-      syllabus_link = page.search("#course_nav a").reject { |a| a.text.strip.downcase != "syllabus" }.first
+      syllabus_link = page.search("#course_nav a").select { |a| a.text.strip.casecmp("syllabus").zero? }.first
 
       course[:description] = description
       course[:image] = image

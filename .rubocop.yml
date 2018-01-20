@@ -7,16 +7,16 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: false
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   Enabled: false
 
 Style/SignalException:
@@ -37,6 +37,9 @@ Style/StringLiterals:
 Style/RegexpLiteral:
   Exclude:
     - test/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
 
 Metrics/LineLength:
   Max: 120

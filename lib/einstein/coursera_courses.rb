@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/https'
 
 class Einstein::CourseraCourses
@@ -8,6 +10,7 @@ class Einstein::CourseraCourses
   def self.fetch
     offset = 0
     courses = []
+
     while offset >= 0
       result = fetch_course_listings(offset)
       offset = result[:offset]
@@ -29,7 +32,6 @@ class Einstein::CourseraCourses
     # Parse the request
     json = JSON.parse(response.body)
     courses = []
-    new_offset = json["offset"]
 
     # Extract all courses
     courses << json["elements"].collect do |course|
@@ -37,11 +39,11 @@ class Einstein::CourseraCourses
     end
 
     # We know we're done if the paging->next key in the json is nil
-    if !json["paging"]["next"].nil?
-      new_offset = json["paging"]["next"].to_i
-    else
-      new_offset = -1 # We have no more results so set the offset to -1
-    end
+    new_offset = if !json["paging"]["next"].nil?
+                   json["paging"]["next"].to_i
+                 else
+                   -1 # We have no more results so set the offset to -1
+                 end
 
     { offset: new_offset, courses: courses.flatten }
   end
@@ -86,9 +88,9 @@ class Einstein::CourseraCourses
   end
 
   def self.includes
-    %w(
+    %w[
       partnerIds
       specializations
-    ).join(',')
+    ].join(',')
   end
 end
